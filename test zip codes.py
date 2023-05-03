@@ -1,5 +1,8 @@
 import pandas as pd
 import numpy as np
+from geopy.extra.rate_limiter import RateLimiter
+from brazilcep import get_address_from_cep, WebService
+from brazilcep import get_address_from_cep
 
 #Vou usar o pacote do python de ceps do Brasil
 #antes era conhecido como pycep_correios
@@ -17,7 +20,7 @@ from geopy.geocoders import Nominatim
 # objects from the module to be imported directly into the caller’s
 # symbol table.
 
-address = bc.get_address_from_cep('87303253')
+address = bc.get_address_from_cep('01004900', webservice=WebService.VIACEP)
 
 geolocator = Nominatim(user_agent="test_teste")
 location=geolocator.geocode(address)
@@ -26,6 +29,9 @@ print("\n")
 print(location)
 print("\n")
 print(location.latitude, location.longitude)
+print("\n")
+
+
 
 
 
