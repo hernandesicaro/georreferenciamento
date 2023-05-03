@@ -17,12 +17,14 @@ from geopy.geocoders import Nominatim
 # objects from the module to be imported directly into the caller’s
 # symbol table.
 
-address = bc.get_address_from_cep('04038903')
-print(address)
+address = bc.get_address_from_cep('87303253')
 
 geolocator = Nominatim(user_agent="test_teste")
 location=geolocator.geocode(address)
-
+print(address)
+print("\n")
+print(location)
+print("\n")
 print(location.latitude, location.longitude)
 
 
