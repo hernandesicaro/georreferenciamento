@@ -18,3 +18,5 @@ df['location'] = df['address'].apply(geocode)
 df['point'] = df['location'].apply(lambda loc: tuple(loc.point) if loc else None)
 
 print(df)
+
+#now i have to make a dataset of my unmatched addresses
