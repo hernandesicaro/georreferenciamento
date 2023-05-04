@@ -10,3 +10,5 @@ geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
 df['point'] = (df['address'].apply(geocode)).apply(lambda loc: tuple(loc.point) if loc else None)
 
 print(df)
+
+#funcionou \o/
